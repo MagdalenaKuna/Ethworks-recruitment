@@ -1,7 +1,6 @@
 {
     "name": "ethworksrecruitment",
     "version": "1.0.0",
-    "type": "module",
     "description": "The task recruitment.",
     "author": "Magdalena Kuna",
     "dependencies": {},
@@ -11,6 +10,7 @@
     },
     "main": "./addFunction.js",
     "scripts": {
+        "start": "node addFunction",
         "test": "jest"
     },
     "devDependencies": {
