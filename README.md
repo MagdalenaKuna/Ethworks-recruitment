@@ -1,5 +1,5 @@
 # Ethworks-recruitment
-Recruitment task
+Recruitment task by Magdalena Kuna
 
 ## Building
 To build you can use command:
