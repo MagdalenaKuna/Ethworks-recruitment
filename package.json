@@ -1,0 +1,19 @@
+{
+    'name': 'ethworksrecruitment',
+    'version': '1.0.0',
+    'type': 'module',
+    'description': 'The task recruitment.',
+    'author': 'Magdalena Kuna',
+    'dependencies': {},
+    'repository': {
+        'type': 'git',
+        'url': 'https://github.com/MagdalenaKuna/Ethworks-recruitment'
+    },
+    'main': './addFunction.js',
+    'scripts': {
+        'test': 'jest'
+    },
+    'devDependencies': {
+        'jest': '^26.1.0'
+    }
+}
