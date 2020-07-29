@@ -1,17 +1,22 @@
-
-let x; //unknown
-let firstElement = "2*x^2 + 3 + x^-3"
-let secondElement = "3*x^3.2 + x^2 -3*x^2 + 4*x^3"
-
 function addElements(firstElement, secondElement) {
   let summation;
+  if((firstElement && secondElement) === ('' || /\s/g)){
+    return console.error("Nothing to do. Empty all elements.");
+  }else if(firstElement === ('' || /\s/g)){
+    summation = secondElement;
+  } else if(secondElement === ('' || /\s/g)){
+    summation = firstElement;
+  } else {
+    summation = firstElement + ' + ' + secondElement;
+  }
+  return summation;
+}
 
-  summation = firstElement + ' + ' + secondElement;
+function parsingSummation(summation) {
   summation = summation.replace(/\s/g,'');
   summation = summation.replace(/(?<!\^)-/g,'+-');
 
   const arrayElements = summation.split('+');
-  // console.log(summation)
   return arrayElements
 }
 
@@ -34,12 +39,10 @@ function arrayToObject(arrayElements){
         objectElements = {...objectElements, 0: parseFloat(item)}
       }
     }
-    // console.log(objectElements)
     return objectElements; 
 }
 
 function result(objectElements){
-    // const objectSize = Object.keys(objectElements).length;
     let finalResult = "";
 
     for (const prop in objectElements){
@@ -61,7 +64,12 @@ function result(objectElements){
 }
 
 function main(){
-  const arrayElements = addElements(firstElement, secondElement) 
+  let x; //unknown
+  let firstElement = "2*x^2 + 3 + x^-3"
+  let secondElement = "3*x^3.2 + x^2 -3*x^2 + 4*x^3"
+
+  const summation = addElements(firstElement, secondElement)
+  const arrayElements = parsingSummation(summation) 
   const objectElements =arrayToObject(arrayElements)
   const finalResult = result(objectElements)
 
